@@ -4,25 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+import com.gilberto009199.itau.desafio_backend.entities.TransactionEntity;
 import com.gilberto009199.itau.desafio_backend.requests.TransactionRequest;
 
 public class TransactionRepository{
     
-    private final List<TransactionRequest> db = new ArrayList<>();
+    private final List<TransactionEntity> db = new ArrayList<>();
     private final Semaphore db_lock = new Semaphore(1);
 
-    public synchronized TransactionRequest save(final TransactionRequest entity){
+    public synchronized TransactionEntity save(final TransactionRequest request){
         
-        TransactionRequest save;
+        TransactionEntity save = TransactionEntity.of(request);
 
         try{
            
             db_lock.acquire(); // Se estiver ocupado, a thread fica esperando
            
             
-            db.add(entity);
-            
-            save = entity;
+            db.add(save);
 
         } catch (Exception e) {
             // @todo return specific expection
@@ -43,5 +42,9 @@ public class TransactionRepository{
         } catch (Exception e) {
             // @todo return specific expection
         } finally { db_lock.release();}
+    }
+
+    public List<TransactionEntity> findAll() {
+        return new ArrayList<>(this.db);
     }
 }
