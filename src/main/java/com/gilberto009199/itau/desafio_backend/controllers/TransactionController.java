@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gilberto009199.itau.desafio_backend.requests.TransactionRequest;
+import com.gilberto009199.itau.desafio_backend.services.TransactionService;
 
 import jakarta.validation.Valid;
 
@@ -16,18 +17,27 @@ import jakarta.validation.Valid;
 @RequestMapping("/transacao")
 public class TransactionController {
 
+    private final TransactionService service;
+
+    public TransactionController(TransactionService service){
+        this.service = service;
+    }
+
     @PostMapping
     public ResponseEntity<?> saveTransaction(   @RequestBody 
                                                 @Valid
                                                 TransactionRequest request){
 
-        
+        service.save(request);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @DeleteMapping
     public ResponseEntity<?> clearTransactions(){
+
+        service.deleteAll();
+
         return ResponseEntity.ok(null);
     }
 }
