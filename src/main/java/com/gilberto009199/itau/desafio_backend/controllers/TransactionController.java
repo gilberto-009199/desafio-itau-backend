@@ -1,5 +1,7 @@
 package com.gilberto009199.itau.desafio_backend.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +18,8 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/transacao")
 public class TransactionController {
+    
+    public static final Logger logger = LoggerFactory.getLogger(TransactionController.class);
 
     private final TransactionService service;
 
@@ -28,16 +32,22 @@ public class TransactionController {
                                                 @Valid
                                                 TransactionRequest request){
 
+        logger.debug("stage=init method=saveTransaction: {}", request);
+        
         service.save(request);
+
+        logger.debug("stage=end method=saveTransaction: {}", request);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @DeleteMapping
     public ResponseEntity<?> clearTransactions(){
-
+        logger.debug("stage=init method=clearTransactions");
+        
         service.deleteAll();
 
+        logger.debug("stage=end method=clearTransactions");
         return ResponseEntity.ok(null);
     }
 }
