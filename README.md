@@ -1,5 +1,11 @@
 # desafio-itau-backend
 
+[![Java CI with Maven](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml)
+
+Versão final, aplicando as funções da API.
+
+More: + tests + health check.
+
 EndPoint:
 - [x] [/transacao](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java)
   - tests [TransactionControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionControllerTests.java)
