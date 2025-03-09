@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Repository;
 
 import com.gilberto009199.itau.desafio_backend.entities.TransactionEntity;
 import com.gilberto009199.itau.desafio_backend.requests.TransactionRequest;
 
 @Repository
-public class TransactionRepository{
+public class TransactionRepository implements HealthIndicator{
     
     private final List<TransactionEntity> db    = new ArrayList<>();
     private final Semaphore db_lock             = new Semaphore(1);
@@ -49,5 +51,10 @@ public class TransactionRepository{
 
     public List<TransactionEntity> findAll() {
         return new ArrayList<>(this.db);
+    }
+
+    @Override
+    public Health health() {
+        return Health.up().withDetail("Database In Memory", "OK").build();
     }
 }
