@@ -3,8 +3,33 @@
 [![Java CI with Maven](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml)
 
 Versão final, aplicando as funções da API.
+More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker`
 
-More: `+ Tests` `+ Health Check` `+ Logging`
+```shell
+# Use Docker
+$ chmod +x startDocker.sh
+$ ./startDocker.sh
+# Use Maven
+$ ./mvnw  clean package
+$ java -jar target/desafio-backend.jar
+```
+```shell
+# Use /transacao
+
+$ curl -X POST http://localhost:8080/transacao \
+     -H "Content-Type: application/json" \
+     -d '{
+           "valor": 100.50,
+           "dataHora": "2025-03-09T12:34:56Z"
+         }'
+$ curl -X DELETE http://localhost:8080/transacao
+
+# Use /estatistica
+
+$ curl -X GET http://localhost:8080/estatistica
+```
+
+
 
 Code:
 
