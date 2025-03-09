@@ -8,12 +8,14 @@ import java.time.temporal.TemporalUnit;
 
 import org.assertj.core.data.TemporalUnitOffset;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Description;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -29,7 +31,7 @@ public class TransactionControllerTests {
     protected String path = "/transacao";
 
     @Test
-    @Description("Tests Transaction valid value and date")
+    @DisplayName("Tests Transaction valid value and date")
     void createTransactionValid(){
         
         var request = new TransactionRequest(
@@ -48,7 +50,7 @@ public class TransactionControllerTests {
 
 
     @Test
-    @Description("Tests Transaction with value negative")
+    @DisplayName("Tests Transaction with value negative")
     void createTransactionInValidValue(){
 
         var request = new TransactionRequest(
@@ -63,9 +65,9 @@ public class TransactionControllerTests {
 
         Assertions.assertEquals( HttpStatus.UNPROCESSABLE_ENTITY, response.getStatusCode());
     }
-    
+
     @Test
-    @Description("Tests Transaction with Time after now")
+    @DisplayName("Tests Transaction with Time after now")
     void createTransactionInValidDate(){
 
         var request = new TransactionRequest(
@@ -81,4 +83,16 @@ public class TransactionControllerTests {
         Assertions.assertEquals( HttpStatus.UNPROCESSABLE_ENTITY, response.getStatusCode());
     }
 
+
+    @Test
+    @DisplayName("Tests Delete All Transactions")
+    void deleteTransations(){
+
+        var response= restAPI.exchange(path, 
+            HttpMethod.DELETE,
+            null,
+            Void.class);
+
+        Assertions.assertEquals( HttpStatus.OK, response.getStatusCode());
+    }
 }
