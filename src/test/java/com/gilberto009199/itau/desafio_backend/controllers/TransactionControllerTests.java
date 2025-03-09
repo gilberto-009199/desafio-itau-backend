@@ -32,8 +32,6 @@ public class TransactionControllerTests {
     @Description("Tests Transaction valid value and date")
     void createTransactionValid(){
         
-        
-
         var request = new TransactionRequest(
             BigDecimal.valueOf(100),
             // now - 100 min

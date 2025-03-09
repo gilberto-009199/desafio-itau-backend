@@ -9,6 +9,11 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 public record TransactionRequest( 
-    @NotNull @Min(0) BigDecimal valor,
-    @NotNull @BeforeNowTime OffsetDateTime dataHora
+    @NotNull 
+    @Min(value = 0, message="valor >= 0")
+    BigDecimal valor,
+    
+    @NotNull
+    @BeforeNowTime(message = "dataHora < Data Atual")
+    OffsetDateTime dataHora
 ){}

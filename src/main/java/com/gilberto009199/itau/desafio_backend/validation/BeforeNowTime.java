@@ -11,7 +11,7 @@ import static java.lang.annotation.ElementType.*;
 @Documented
 @Constraint(validatedBy = BeforeNowTimeValid.class)
 public @interface BeforeNowTime {
-    public String message() default "Celular Incorreto";
+    public String message() default "After now Time";
     public Class<?>[] groups() default {};
     public Class<? extends Payload>[] payload() default {};
 }
