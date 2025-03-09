@@ -26,16 +26,18 @@ public class TransactionControllerTests {
     /* Componente para interagir com a API */
 	@Autowired
 	protected TestRestTemplate restAPI;
+    protected String path = "/transacao";
 
     @Test
     @Description("Tests Transaction valid value and date")
     void createTransactionValid(){
         
-        String path = "/transacao";
+        
 
         var request = new TransactionRequest(
             BigDecimal.valueOf(100),
-            OffsetDateTime.now()
+            // now - 100 min
+            OffsetDateTime.now().minus(100, ChronoUnit.MINUTES)
         );
 		
 
@@ -49,11 +51,10 @@ public class TransactionControllerTests {
     @Test
     @Description("Tests Transaction with Time after now")
     void createTransactionInValidDate(){
-        
-        String path = "/transacao";
 
         var request = new TransactionRequest(
             BigDecimal.valueOf(100),
+            // now + 100 min
             OffsetDateTime.now().plus(100, ChronoUnit.MINUTES)
         );
 		
