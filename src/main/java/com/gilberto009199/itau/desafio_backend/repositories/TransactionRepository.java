@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+import org.springframework.stereotype.Repository;
+
 import com.gilberto009199.itau.desafio_backend.entities.TransactionEntity;
 import com.gilberto009199.itau.desafio_backend.requests.TransactionRequest;
 
+@Repository
 public class TransactionRepository{
     
-    private final List<TransactionEntity> db = new ArrayList<>();
-    private final Semaphore db_lock = new Semaphore(1);
+    private final List<TransactionEntity> db    = new ArrayList<>();
+    private final Semaphore db_lock             = new Semaphore(1);
 
     public synchronized TransactionEntity save(final TransactionRequest request){
         
