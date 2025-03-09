@@ -46,6 +46,24 @@ public class TransactionControllerTests {
 
     }
 
+
+    @Test
+    @Description("Tests Transaction with value negative")
+    void createTransactionInValidValue(){
+
+        var request = new TransactionRequest(
+            BigDecimal.valueOf( -1),
+            // now + 100 min
+            OffsetDateTime.now()
+        );
+		
+
+        var response = restAPI.postForEntity( path, request, null);
+
+
+        Assertions.assertEquals( HttpStatus.UNPROCESSABLE_ENTITY, response.getStatusCode());
+    }
+    
     @Test
     @Description("Tests Transaction with Time after now")
     void createTransactionInValidDate(){
@@ -61,6 +79,6 @@ public class TransactionControllerTests {
 
 
         Assertions.assertEquals( HttpStatus.UNPROCESSABLE_ENTITY, response.getStatusCode());
-
     }
+
 }
