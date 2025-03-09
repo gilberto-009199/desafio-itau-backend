@@ -1,5 +1,12 @@
 # desafio-itau-backend
 
+EndPoint:
+- [x] [/transacao](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java)
+  - tests [TransactionControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionControllerTests.java)
+- [x] [/estatistica](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsController.java)
+  - tests [StatisticsControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsControllerTests.java)
+- [x] /actuator/health
+
 # Itaú Unibanco - Desafio de Programação
 
 Este é um desafio bacana tanto de desenvolvimento de software quanto de engenharia de software. Queremos testar sua capacidade de construir um software com várias partes diferentes funcionando em conjunto!
