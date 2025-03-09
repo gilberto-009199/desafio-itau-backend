@@ -4,14 +4,26 @@
 
 Versão final, aplicando as funções da API.
 
-More: + tests + health check.
+More: `+ Tests` `+ Health Check` `+ Logging`
 
-EndPoint:
-- [x] [/transacao](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java)
-  - tests [TransactionControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionControllerTests.java)
-- [x] [/estatistica](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsController.java)
-  - tests [StatisticsControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsControllerTests.java)
-- [x] /actuator/health
+Code:
+
++ Controllers:
+  - [x] [/transacao](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java)
+    - Tests [TransactionControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionControllerTests.java)
+    - Logging [TransactionController.java#L22](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java#L22)
+  - [x] [/estatistica](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsController.java)
+    - Tests [StatisticsControllerTests.java](./src/test/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsControllerTests.java)
+    - Logging [StatisticsController.java#L18](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/StatisticsController.java#L18)
+  - [x] /actuator/health
+
++ Services:
+  - [TransactionService](src/main/java/com/gilberto009199/itau/desafio_backend/services/TransactionService.java)
+    - Logging [TransactionService.java#18](src/main/java/com/gilberto009199/itau/desafio_backend/services/TransactionService.java#18)
+
++ Repositories(InMemory):
+  - [TransactionRepository](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java)
+    - Logging [TransactionRepository.java#20](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java#20)
 
 # Itaú Unibanco - Desafio de Programação
 
