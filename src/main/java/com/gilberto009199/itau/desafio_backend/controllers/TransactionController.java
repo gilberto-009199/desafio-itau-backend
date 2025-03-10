@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gilberto009199.itau.desafio_backend.requests.TransactionRequest;
@@ -27,6 +28,7 @@ public class TransactionController {
         this.service = service;
     }
 
+    @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping
     public ResponseEntity<?> saveTransaction(   @RequestBody 
                                                 @Valid
@@ -40,7 +42,8 @@ public class TransactionController {
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
+    
+    @ResponseStatus(code = HttpStatus.OK)
     @DeleteMapping
     public ResponseEntity<?> clearTransactions(){
         logger.debug("stage=init method=clearTransactions");

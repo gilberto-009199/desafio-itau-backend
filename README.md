@@ -54,6 +54,8 @@ $ curl -X GET http://localhost:8080/estatistica
   - [x] [TransactionRepository](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java)
     - Logging [TransactionRepository.java#20](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java#20)
 
+[![./swagger.png]]
+
 # Itaú Unibanco - Desafio de Programação
 
 Este é um desafio bacana tanto de desenvolvimento de software quanto de engenharia de software. Queremos testar sua capacidade de construir um software com várias partes diferentes funcionando em conjunto!
