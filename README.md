@@ -27,7 +27,7 @@ $ curl -X POST http://localhost:8080/transacao \
      -H "Content-Type: application/json" \
      -d '{
            "valor": 100.50,
-           "dataHora": "2025-03-09T12:34:56Z"
+           "dataHora": "'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'"
          }'
 $ curl -X DELETE http://localhost:8080/transacao
 
