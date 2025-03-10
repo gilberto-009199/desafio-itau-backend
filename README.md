@@ -3,7 +3,9 @@
 [![Java CI with Maven](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml)
 
 Versão final, aplicando as funções da API.
+
 More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker`
+#### Exec
 
 ```shell
 # Use Docker
@@ -16,6 +18,8 @@ $ ./startDocker.sh
 $ ./mvnw  clean package
 $ java -jar target/desafio-backend.jar
 ```
+#### Test
+
 ```shell
 # Use /transacao
 
@@ -31,10 +35,7 @@ $ curl -X DELETE http://localhost:8080/transacao
 
 $ curl -X GET http://localhost:8080/estatistica
 ```
-
-
-
-Code:
+#### Code:
 
 + Controllers:
   - [x] [/transacao](src/main/java/com/gilberto009199/itau/desafio_backend/controllers/TransactionController.java)
@@ -46,11 +47,11 @@ Code:
   - [x] /actuator/health
 
 + Services:
-  - [TransactionService](src/main/java/com/gilberto009199/itau/desafio_backend/services/TransactionService.java)
+  - [x] [TransactionService](src/main/java/com/gilberto009199/itau/desafio_backend/services/TransactionService.java)
     - Logging [TransactionService.java#18](src/main/java/com/gilberto009199/itau/desafio_backend/services/TransactionService.java#18)
 
 + Repositories(InMemory):
-  - [TransactionRepository](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java)
+  - [x] [TransactionRepository](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java)
     - Logging [TransactionRepository.java#20](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java#20)
 
 # Itaú Unibanco - Desafio de Programação
