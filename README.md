@@ -6,7 +6,7 @@ Versão final, aplicando as funções da API.
 
 More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker` `+ Swagger`
 
-#### Exec
+#### Exec/Build:
 
 ```shell
 # Use Docker
@@ -19,7 +19,7 @@ $ ./startDocker.sh
 $ ./mvnw  clean package
 $ java -jar target/desafio-backend.jar
 ```
-#### Test
+#### Use:
 
 ```shell
 # Use /transacao
