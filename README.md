@@ -4,8 +4,9 @@
 
 Versão final, aplicando as funções da API.
 
-More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker`
-#### Exec
+More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker` `+ Swagger`
+
+#### Exec/Build:
 
 ```shell
 # Use Docker
@@ -18,7 +19,7 @@ $ ./startDocker.sh
 $ ./mvnw  clean package
 $ java -jar target/desafio-backend.jar
 ```
-#### Test
+#### Use:
 
 ```shell
 # Use /transacao
@@ -54,7 +55,12 @@ $ curl -X GET http://localhost:8080/estatistica
   - [x] [TransactionRepository](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java)
     - Logging [TransactionRepository.java#20](src/main/java/com/gilberto009199/itau/desafio_backend/repositories/TransactionRepository.java#20)
 
-[![./swagger.png]]
+#### Swagger:
+
+
+* [Documentacao swagger JSON](./swagger.json) - Arquivo de Documentacao em JSON
+
+![Swagger UI](./swagger.png)
 
 # Itaú Unibanco - Desafio de Programação
 
