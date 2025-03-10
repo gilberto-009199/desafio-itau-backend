@@ -7,9 +7,12 @@ More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker`
 
 ```shell
 # Use Docker
+
 $ chmod +x startDocker.sh
 $ ./startDocker.sh
+
 # Use Maven
+
 $ ./mvnw  clean package
 $ java -jar target/desafio-backend.jar
 ```
