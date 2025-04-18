@@ -6,19 +6,20 @@ Versão final, aplicando as funções da API.
 
 More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker` `+ Swagger`
 
-#### Exec/Build:
+#### How Run:
 
+##### Docker:
 ```shell
 # Use Docker
-
-$ chmod +x startDocker.sh
-$ ./startDocker.sh
-
+$ docker-compose up
+```
+##### Maven:
+```shell
 # Use Maven
-
 $ ./mvnw  clean package
 $ java -jar target/desafio-backend.jar
 ```
+
 #### Use:
 
 ```shell
