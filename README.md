@@ -3,6 +3,10 @@
 [![Java CI with Maven](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml)
 
 
+<img align="right" src="./assets/spring16x16.svg" alt="Spring Boot" width="32px"/>
+<img align="right" src="./assets/docker16x16.svg" alt="Docker" width="32px"/>
+<img align="right" src="./assets/swagger.svg" alt="Bootstrap" width="32px"/>
+
 Back-end feito com API REST para receber transações e regrar estatisticas. Feito usando **SpringBoot** e **Swagger**.
 
 More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker` `+ Swagger`
