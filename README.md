@@ -2,7 +2,8 @@
 
 [![Java CI with Maven](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/gilberto-009199/desafio-itau-backend/actions/workflows/maven.yml)
 
-Versão final, aplicando as funções da API.
+
+Back-end feito com API REST para receber transações e regrar estatisticas. Feito usando **SpringBoot** e **Swagger**.
 
 More: `+ Tests` `+ Health Check` `+ Logging` `+ Docker` `+ Swagger`
 
